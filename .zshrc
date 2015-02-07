@@ -74,3 +74,5 @@ export ARCHFLAGS="-arch x86_64"
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 source /etc/zsh_command_not_found
 export TESSDATA_PREFIX=/root/tesseract-ocr-read-only
+# http://unix.stackexchange.com/questions/1045/getting-256-colors-to-work-in-tmux
+export TERM=xterm-256color
