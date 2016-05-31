@@ -49,7 +49,7 @@ ZSH_THEME="rkj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages command-not-found pip python zsh-syntax-highlighting history-substring-search)
+plugins=(git colored-man-pages ubuntu command-not-found pip python zsh-syntax-highlighting history-substring-search)
 
 # User configuration
 
@@ -89,7 +89,8 @@ export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:/usr/local/cuda-7.5/bin
 
 # export PATH="/home/miki/anaconda3/bin:$PATH"
-export LD_LIBRARY_PATH=/usr/local/cuda-7.5/lib64
+export C_INCLUDE_PATH=/usr/local/cuda-7.5/targets/x86_64-linux/include
+export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-7.5/lib64:/usr/local/cuda-7.5/targets/x86_64-linux/lib
 export CUDA_ROOT=/usr/local/cuda-7.5
 
 export DISPLAY=:0
@@ -98,5 +99,5 @@ export EDITOR="$VISUAL"
 
 
 # use Anaconda PYTHON as default
-export PATH=/home/miki/anaconda3/bin:$PATH
-
+export PATH=$PATH:/home/miki/anaconda3/bin
+[ $(alias | grep -sq '^ag=') ] && unalias ag
