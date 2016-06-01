@@ -48,6 +48,3 @@ xfce4-session --display=:1 &
 # startxfce4 &
 ```
 
-### apply my settings
-```
-```
