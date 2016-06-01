@@ -46,8 +46,8 @@ set tags+=/usr/include/tags,./tags,tags;
 
 " Tip 1235
 " " Use embedded Python Calculator
-command! -nargs=+ Calc :python3 print(<args>)
-:python3 from math import *
+command! -nargs=+ Calc :python print(<args>)
+:python from math import *
 
 " http://www.vimbits.com/bits/532
 if executable("ag")
@@ -57,7 +57,7 @@ if executable("ag")
     command! -nargs=+ -complete=file_in_path -bar Ag silent grep! <args>|cwindow|redraw!
 endif
 
-let g:jedi#force_py_version = 3
+let g:jedi#force_py_version = 2
 
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256

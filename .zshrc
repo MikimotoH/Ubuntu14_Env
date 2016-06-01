@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/miki/.oh-my-zsh
+  export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -88,7 +88,7 @@ export JAVA_HOME=/opt/jdk1.8.0_73
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:/usr/local/cuda-7.5/bin
 
-# export PATH="/home/miki/anaconda3/bin:$PATH"
+# export PATH="$HOME/anaconda3/bin:$PATH"
 export C_INCLUDE_PATH=/usr/local/cuda-7.5/targets/x86_64-linux/include
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-7.5/lib64:/usr/local/cuda-7.5/targets/x86_64-linux/lib
 export CUDA_ROOT=/usr/local/cuda-7.5
@@ -99,5 +99,5 @@ export EDITOR="$VISUAL"
 
 
 # use Anaconda PYTHON as default
-export PATH=$PATH:/home/miki/anaconda3/bin
+export PATH=$PATH:$HOME/anaconda3/bin
 [ $(alias | grep -sq '^ag=') ] && unalias ag

@@ -3,10 +3,16 @@ Ubuntu 14.04 LTS env
 
 ### install oh-my-zsh zsh-syntax-highlight
 ```
+sudo apt-get install zsh git vim tmux
 zsh
-sudo chsh -s `which zsh` miki
+sudo chsh -s `which zsh` $USER
+cat /etc/passwd | grep $USER
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/MikimotoH/Ubuntu14_Env/
+cd Ubuntu14_Env
+cp ./.{zshrc,gitconfig,tmux.conf,vimrc,xsession} ~/
+source ~/.zshrc
 ```
 
 ### install tmux 2.0 and tpm
@@ -28,21 +34,20 @@ vim ~/.vimrc
 
 ### install Xrdp xfce4
 ```
-sudo apt-get install xfce4 xfce4-goodies xrdp
+sudo apt-get install xfce4 xfce4-goodies xrdp vnc4server
 # sudo apt-get install xubuntu-desktop
 echo xfce4-session > ~/.xsession
 sudo cp ~/.xsession /etc/skel
 sudo vim /etc/xrdp/xrdp.ini
+# modify port=-1 to port=ask-1
 sudo service xrdp restart
 export DISPLAY=:1
-vncserver -geometry 1366x768 -depth 16 #setup password
+vnc4server -geometry 1366x768 -depth 16 :1
+# setup password
 xfce4-session --display=:1 &
 # startxfce4 &
 ```
 
 ### apply my settings
 ```
-git clone https://github.com/MikimotoH/Ubuntu14_Env/
-cd Ubuntu14_Env
-cp ./.{zshrc,vimrc,tmux.conf,gitconfig,xsession} ~/
 ```
