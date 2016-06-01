@@ -29,12 +29,15 @@ vim ~/.vimrc
 ### install Xrdp xfce4
 ```
 sudo apt-get install xfce4 xfce4-goodies xrdp
+# sudo apt-get install xubuntu-desktop
 echo xfce4-session > ~/.xsession
 sudo cp ~/.xsession /etc/skel
 sudo vim /etc/xrdp/xrdp.ini
 sudo service xrdp restart
-vncserver #setup password
+export DISPLAY=:1
+vncserver -geometry 1366x768 -depth 16 #setup password
 xfce4-session --display=:1 &
+# startxfce4 &
 ```
 
 ### apply my settings
