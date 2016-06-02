@@ -37,7 +37,6 @@ vim ~/.vimrc
 ```
 sudo apt-get install xfce4 xfce4-goodies xrdp vnc4server -y
 # sudo apt-get install xubuntu-desktop
-echo xfce4-session > ~/.xsession
 sudo cp ~/.xsession /etc/skel
 sudo vim /etc/xrdp/xrdp.ini
 # modify port=-1 to port=ask-1
