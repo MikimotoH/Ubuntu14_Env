@@ -3,7 +3,7 @@ Ubuntu 14.04 LTS env
 
 ### install oh-my-zsh zsh-syntax-highlight
 ```
-sudo apt-get install zsh git vim tmux
+sudo apt-get install zsh git vim -y
 zsh
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
@@ -21,8 +21,9 @@ sudo apt-get install -y python-software-properties software-properties-common
 sudo add-apt-repository -y ppa:pi-rho/dev
 sudo apt-get update
 sudo apt-get install -y tmux
-tmux -V
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+tmux
+# press "Ctrl-B I" to install Plugins
 ```
 
 ### install vim vundle
@@ -34,7 +35,7 @@ vim ~/.vimrc
 
 ### install Xrdp xfce4
 ```
-sudo apt-get install xfce4 xfce4-goodies xrdp vnc4server
+sudo apt-get install xfce4 xfce4-goodies xrdp vnc4server -y
 # sudo apt-get install xubuntu-desktop
 echo xfce4-session > ~/.xsession
 sudo cp ~/.xsession /etc/skel
