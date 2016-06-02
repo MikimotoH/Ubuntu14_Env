@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +53,7 @@ plugins=(git colored-man-pages ubuntu command-not-found pip python zsh-syntax-hi
 
 # User configuration
 
-  export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -88,7 +88,6 @@ export JAVA_HOME=/opt/jdk1.8.0_73
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:/usr/local/cuda-7.5/bin
 
-# export PATH="$HOME/anaconda3/bin:$PATH"
 export C_INCLUDE_PATH=/usr/local/cuda-7.5/targets/x86_64-linux/include
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-7.5/lib64:/usr/local/cuda-7.5/targets/x86_64-linux/lib
 export CUDA_ROOT=/usr/local/cuda-7.5
