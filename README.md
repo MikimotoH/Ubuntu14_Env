@@ -46,5 +46,12 @@ vnc4server -geometry 1366x768 -depth 16 :1
 # setup password
 xfce4-session --display=:1 &
 # startxfce4 &
+
+# xfonts
+sudo apt-get install xfonts-base xfonts-100dpi  xfonts-75dpi xfonts-cyrillic xfonts-scalable 
+# chinese fonts
+sudo apt-get install xfonts-wqy fonts-wqy-zenhei
+# japanese fonts
+sudo apt-get install fonts-takao-mincho
 ```
 
