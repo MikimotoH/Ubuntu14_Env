@@ -12,6 +12,7 @@ Plugin 'ervandew/supertab'
 Plugin 'wombat256.vim'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
+Plugin 'klen/python-mode'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -57,9 +58,25 @@ if executable("ag")
     command! -nargs=+ -complete=file_in_path -bar Ag silent grep! <args>|cwindow|redraw!
 endif
 
-let g:jedi#force_py_version = 2
+let g:jedi#force_py_version = 3
 
 if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
+
+" ---
+" pymode
+let g:pymode_python = 'python3'
+
+let g:pymode_options = 0
+"If this option is set to 1, pymode will enable the following options for
+"python buffers: >
+setlocal complete+=t
+setlocal formatoptions-=t
+setlocal nowrap
+setlocal textwidth=79
+setlocal commentstring=#%s
+setlocal define=^\s*\\(def\\\\|class\\)
+let g:pymode_lint_ignore = "E501,W404,E303,W0611,W391"
+
 
