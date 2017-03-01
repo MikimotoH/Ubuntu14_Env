@@ -95,6 +95,7 @@ export CUDA_ROOT=/usr/local/cuda-7.5
 export DISPLAY=:0
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export GOPATH=$HOME/go
 
 
 # use Anaconda PYTHON as default
