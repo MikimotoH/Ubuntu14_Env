@@ -47,8 +47,8 @@ set tags+=/usr/include/tags,./tags,tags;
 
 " Tip 1235
 " " Use embedded Python Calculator
-command! -nargs=+ Calc :python print(<args>)
-:python from math import *
+command! -nargs=+ Calc :python3 print(<args>)
+:python3 from math import *
 
 " http://www.vimbits.com/bits/532
 if executable("ag")
