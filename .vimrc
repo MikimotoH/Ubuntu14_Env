@@ -7,12 +7,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
-Plugin 'davidhalter/jedi-vim'
+" Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 Plugin 'wombat256.vim'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'klen/python-mode'
+" Plugin 'klen/python-mode'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -42,7 +43,7 @@ nnoremap <F7> :NERDTreeToggle<CR>
 set statusline=%f\ %{tagbar#currenttag('%s','','f')}%<%=POS=[%l,%v]%p%%
 set title titlestring=%-.355{tagbar#currenttag('%s','','fs')}%<
 
-let g:ycm_confirm_extra_conf = 0
+let g:ycm_python_binary_path = '/usr/bin/python3'
 set tags+=/usr/include/tags,./tags,tags;
 
 " Tip 1235
