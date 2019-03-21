@@ -3,6 +3,7 @@ Ubuntu 14.04 LTS env
 
 ### install oh-my-zsh zsh-syntax-highlight
 ```
+sudo apt-get update
 sudo apt-get install zsh git vim -y
 zsh
 sudo chsh -s `which zsh` $USER
