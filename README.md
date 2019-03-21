@@ -5,15 +5,17 @@ Ubuntu 14.04 LTS env
 ```
 sudo apt-get update
 sudo apt-get install zsh git vim -y
-zsh
+zsh  # select 0
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
 git clone https://github.com/MikimotoH/Ubuntu14_Env/
 cd Ubuntu14_Env
 cp ./.{zshrc,gitconfig,tmux.conf,vimrc,xsession} ~/
 source ~/.zshrc
+vi ~/.oh-my-zsh/themes/rkj.zsh-theme # change %I to %H
 ```
 
 ### install tmux 2.0 and tpm
