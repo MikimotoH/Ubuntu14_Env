@@ -6,7 +6,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'scrooloose/nerdtree'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 Plugin 'wombat256.vim'
@@ -20,6 +20,7 @@ filetype plugin indent on    " required
 set enc=utf-8
 set fileencoding=utf-8
 set fileencodings=utf-8
+set fileformat=unix
 
 syntax on
 
@@ -39,7 +40,7 @@ set cursorline
 colorscheme wombat256mod
 
 nnoremap <F8> :TagbarToggle<CR>
-nnoremap <F7> :NERDTreeToggle<CR>
+" nnoremap <F7> :NERDTreeToggle<CR>
 set statusline=%f\ %{tagbar#currenttag('%s','','f')}%<%=POS=[%l,%v]%p%%
 set title titlestring=%-.355{tagbar#currenttag('%s','','fs')}%<
 
