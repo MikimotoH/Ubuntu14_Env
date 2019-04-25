@@ -5,8 +5,8 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
+" Plugin 'majutsushi/tagbar'
+" Plugin 'scrooloose/nerdtree'
 " Plugin 'davidhalter/jedi-vim'
 Plugin 'ervandew/supertab'
 Plugin 'wombat256.vim'
@@ -14,6 +14,7 @@ Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
 " Plugin 'klen/python-mode'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -38,10 +39,7 @@ set cursorline
 
 colorscheme wombat256mod
 
-nnoremap <F8> :TagbarToggle<CR>
 nnoremap <F7> :NERDTreeToggle<CR>
-set statusline=%f\ %{tagbar#currenttag('%s','','f')}%<%=POS=[%l,%v]%p%%
-set title titlestring=%-.355{tagbar#currenttag('%s','','fs')}%<
 
 let g:ycm_python_binary_path = '/usr/bin/python3'
 set tags+=/usr/include/tags,./tags,tags;
@@ -80,4 +78,12 @@ setlocal commentstring=#%s
 setlocal define=^\s*\\(def\\\\|class\\)
 let g:pymode_lint_ignore = "E501,W404,E303,W0611,W391"
 
-
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ["flake8"]
