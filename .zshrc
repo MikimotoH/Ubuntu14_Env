@@ -49,7 +49,7 @@ ZSH_THEME="rkj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages ubuntu command-not-found pip python zsh-syntax-highlighting history-substring-search)
+plugins=(git colored-man-pages ubuntu command-not-found pip python zsh-syntax-highlighting history-substring-search zsh-autosuggestions aws docker python pip ubuntu)
 
 # User configuration
 
