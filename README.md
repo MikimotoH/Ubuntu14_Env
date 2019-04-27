@@ -37,6 +37,7 @@ vim ~/.vimrc
 ```
 
 ### build vim-8.1 for YouCompleteMe
+```
 sudo apt-get install python3.5 python3.5-dev build-essential cmake3 silversearcher-ag -y
 sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
@@ -66,6 +67,7 @@ sudo update-alternatives --set vi /usr/local/bin/vim
 unalias ag
 cd ~/.vim/bundles/YouCompleteMe/
 ./install.py
+```
 
 
 ### install Xrdp xfce4
