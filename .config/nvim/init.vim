@@ -56,23 +56,3 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ["$HOME/.local/lib/python3.6/site-packages/flake8"]
-"---
-" ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer()
-set completeopt=menuone,noselect,noinsert
-set shortmess+=c
-inoremap <c-c> <ESC>
-" make it fast
-let ncm2#popup_delay = 5
-let ncm2#complete_length = [[1, 1]]
-" Use new fuzzy based matches
-let g:ncm2#matcher = 'substrfuzzy'
-"---
-" Disable Jedi-vim autocompletion and enable call-signatures options
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
