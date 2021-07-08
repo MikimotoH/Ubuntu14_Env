@@ -3,8 +3,8 @@ Ubuntu 14.04 LTS env
 
 ### install oh-my-zsh zsh-syntax-highlight
 ```
-sudo apt-get update
-sudo apt-get install zsh git vim -y
+sudo apt update
+sudo apt install zsh git vim neovim tmux exuberant-ctags -y
 zsh  # select 0
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
@@ -16,17 +16,15 @@ cd Ubuntu14_Env
 cp ./.{zshrc,gitconfig,tmux.conf,vimrc,xsession} ~/
 source ~/.zshrc
 vi ~/.oh-my-zsh/themes/rkj.zsh-theme # change %I to %H
+mkdir -p ~/.config/nvim/
+vim ~/.config/nvim/init.vim
 ```
 
 ### install tmux 2.0 and tpm
 ```
-sudo apt-get install -y python-software-properties software-properties-common
-sudo add-apt-repository -y ppa:pi-rho/dev
-sudo apt-get update
-sudo apt-get install -y tmux
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux
-# press "Ctrl-B I" to install Plugins
+# press "Ctrl-B Shift+I" to install Plugins
 ```
 
 ### install vim vundle
