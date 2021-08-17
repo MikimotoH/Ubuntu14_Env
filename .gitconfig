@@ -9,6 +9,7 @@
 	default = matching
 [core]
 	editor = nvim
+	autocrlf = input
 [diff]
 	tool = nvim -d
 [merge]
@@ -21,3 +22,4 @@
 	prompt = false
 [alias]
 	d = difftool
+

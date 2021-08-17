@@ -6,11 +6,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ervandew/supertab'
-Plugin 'wombat256.vim'
+Plugin 'morhetz/gruvbox'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
+Plugin 'preservim/tagbar'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 call vundle#end()            " required
@@ -36,7 +37,9 @@ set hlsearch incsearch ignorecase title ttyfast ls=2 showcmd showmatch
 set laststatus=2
 set cursorline
 
-colorscheme wombat256mod
+colorscheme gruvbox
+autocmd vimenter * ++nested colorscheme gruvbox
+set bg=dark
 
 let g:ycm_python_binary_path = '/usr/bin/python3'
 set tags+=/usr/include/tags,./tags,tags;
@@ -75,3 +78,6 @@ let g:syntastic_python_checkers = ["flake8"]
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
+"=====
+" tagbar
+nmap <F8> :TagbarToggle<CR>
