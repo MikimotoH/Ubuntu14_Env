@@ -3,8 +3,7 @@ Ubuntu 14.04 LTS env
 
 ### install oh-my-zsh zsh-syntax-highlight
 ```
-sudo apt update
-sudo apt install zsh git vim neovim tmux exuberant-ctags -y
+sudo apt update && sudo apt install zsh git vim neovim tmux exuberant-ctags -y
 zsh  # select 0
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
