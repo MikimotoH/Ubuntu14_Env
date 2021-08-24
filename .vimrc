@@ -9,11 +9,13 @@ Plugin 'ervandew/supertab'
 Plugin 'morhetz/gruvbox'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'scrooloose/syntastic'
 Plugin 'preservim/tagbar'
+Plugin 'preservim/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -63,7 +65,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 
-"---
+"================
 " syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -74,10 +76,23 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ["flake8"]
 
-"---
+
+"================
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
-"=====
+"==============
+" NerdTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
+
+"==============
+" NerdTree-Tabs
+nnoremap <F9> :NERDTreeTabsToggle<CR>
+
+"=============
 " tagbar
 nmap <F8> :TagbarToggle<CR>
