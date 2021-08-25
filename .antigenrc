@@ -1,0 +1,25 @@
+# Load oh-my-zsh library
+antigen use oh-my-zsh
+
+# Load bundles from the default repo (oh-my-zsh)
+antigen bundle git
+antigen bundle command-not-found
+antigen bundle docker
+antigen bundle colored-man-pages
+antigen bundle ubuntu
+antigen bundle pip
+antigen bundle python
+antigen bundle aws
+
+# Load bundles from external repos
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle esc/conda-zsh-completion
+
+# Select theme
+# antigen theme rkj
+
+# Tell Antigen that you're done
+antigen apply

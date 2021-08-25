@@ -1,3 +1,13 @@
+source $HOME/antigen.zsh
+# Load Antigen configurations
+antigen init ~/.antigenrc
+    
+
+# plugins=(git colored-man-pages ubuntu command-not-found pip python zsh-syntax-highlighting history-substring-search zsh-autosuggestions aws docker )
+
+
+# Tell antigen that you're done
+
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
@@ -49,7 +59,6 @@ ZSH_THEME="rkj"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages ubuntu command-not-found pip python zsh-syntax-highlighting history-substring-search zsh-autosuggestions aws docker python pip ubuntu)
 
 # User configuration
 
@@ -92,12 +101,15 @@ export C_INCLUDE_PATH=/usr/local/cuda-7.5/targets/x86_64-linux/include
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-7.5/lib64:/usr/local/cuda-7.5/targets/x86_64-linux/lib
 export CUDA_ROOT=/usr/local/cuda-7.5
 
-export DISPLAY=:0
+export DISPLAY=':0'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export GOPATH=$HOME/go
 
 
 # use Anaconda PYTHON as default
-export PATH=$PATH:$HOME/anaconda3/bin
+export PATH=$PATH:$HOME/anaconda3/bin:/home/ubuntu/.local/bin
 [ $(alias | grep -sq '^ag=') ] && unalias ag
+
+
+unalias pip

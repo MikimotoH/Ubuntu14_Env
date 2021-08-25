@@ -9,11 +9,10 @@
 	default = matching
 [core]
 	editor = nvim
-	autocrlf = input
 [diff]
-	tool = nvim -d
+	tool = vimdiff
 [merge]
-	tool = nvim -d
+	tool = vimdiff
 
 [mergetool "nvim"]
         cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
@@ -22,4 +21,3 @@
 	prompt = false
 [alias]
 	d = difftool
-
