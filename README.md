@@ -1,41 +1,45 @@
 # Ubuntu14_Env
 Ubuntu 14.04 LTS env
 
-### install oh-my-zsh zsh-syntax-highlight
+### install oh-my-zsh antigen
 ```
-sudo apt update && sudo apt install zsh git vim neovim tmux exuberant-ctags -y
+sudo apt update && sudo apt install zsh git vim neovim tmux exuberant-ctags silversearcher-ag -y
 zsh  # select 0
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+curl -L git.io/antigen > ~/antigen.zsh
 git clone https://github.com/MikimotoH/Ubuntu14_Env/
 cd Ubuntu14_Env
-cp ./.{zshrc,gitconfig,tmux.conf,vimrc,xsession} ~/
+cp ./.{zshrc,gitconfig,antigenrc} ~/
+# git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+# git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 source ~/.zshrc
 vi ~/.oh-my-zsh/themes/rkj.zsh-theme # change %I to %H
-mkdir -p ~/.config/nvim/
-vim ~/.config/nvim/init.vim
 ```
 
 ### install tmux 2.0 and tpm
 ```
+cp ./.tmux.conf ~/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux
 # press "Ctrl-B Shift+I" to install Plugins
+# press "Ctrl-B ESC Shitf-/" to test search in tmux buffer
 ```
 
 ### install vim vundle
 ```
+cp ./.vimrc ~/
+mkdir -p ~/.config/nvim/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 vim ~/.vimrc
+vim ~/.config/nvim/init.vim
 ```
 
 ### build vim-8.1 for YouCompleteMe
 ```
-sudo apt-get install python3.5 python3.5-dev build-essential cmake3 silversearcher-ag -y
+sudo apt-get install python3.8 python3.8-dev build-essential cmake3 -y
 sudo apt install libncurses5-dev libgnome2-dev libgnomeui-dev \
     libgtk2.0-dev libatk1.0-dev libbonoboui2-dev \
     libcairo2-dev libx11-dev libxpm-dev libxt-dev python-dev \
@@ -63,7 +67,7 @@ sudo update-alternatives --set vi /usr/local/bin/vim
 
 unalias ag
 cd ~/.vim/bundles/YouCompleteMe/
-./install.py
+python3 ./install.py --all
 ```
 
 
