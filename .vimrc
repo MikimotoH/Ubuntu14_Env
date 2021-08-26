@@ -10,10 +10,14 @@ Plugin 'morhetz/gruvbox'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'scrooloose/syntastic'
+Plugin 'nvie/vim-flake8'
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'preservim/tagbar'
 Plugin 'preservim/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'godlygeek/tabular'
+Plugin 'vim-scripts/indentpython.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
@@ -27,6 +31,7 @@ set fileformat=unix
 syntax on
 
 set tabstop=8 expandtab shiftwidth=4 softtabstop=4
+set autoindent
 set cindent
 set cino=g0
 set modeline
@@ -87,6 +92,7 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+let NERDTreeIgnore=['\.pyc$', '\~$'] "hide files in NERDTree
 
 
 "==============
@@ -96,3 +102,70 @@ nnoremap <F9> :NERDTreeTabsToggle<CR>
 "=============
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+"================
+" vim-autoformat
+let g:formatterpath = ['/usr/bin/autopep8']
+au BufWrite * :Autoformat
+noremap <F3> :Autoformat<CR>
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+autocmd FileType vim,tex let b:autoformat_autoindent=0
+
+
+"==================
+" nvie/vim-flake8
+let python_highlight_all=1
+syntax on
+
+"================
+" ctrlpvim/ctrlp.vim
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+let g:ctrlp_working_path_mode = 'ra'
+
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+" set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+" let g:ctrlp_user_command = 'dir %s /-n /b /s /a-d'  " Windows
+
+"=========
+" Flagging unnecessary whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+" The following alternative may be less obtrusive.
+highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+" Try the following if your GUI uses a dark background.
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+" Show trailing whitespace:
+match ExtraWhitespace /\s\+$/
+
+" Show trailing whitespace and spaces before a tab:
+match ExtraWhitespace /\s\+$\| \+\ze\t/
+
+" Show tabs that are not at the start of a line:
+match ExtraWhitespace /[^\t]\zs\t\+/
+
+" Show spaces used for indenting (so you use only tabs for indenting).
+match ExtraWhitespace /^\t*\zs \+/
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
+" au BufRead,BufNewFile *.py,*.pyw,*.c,*.h /\s\+$/
+
+"==============
+" PEP8
+ au BufNewFile,BufRead *.py set
+     \ tabstop=4
+     \ softtabstop=4
+     \ shiftwidth=4
+     \ textwidth=80
+     \ expandtab
+     \ autoindent
+     \ fileformat=unix
