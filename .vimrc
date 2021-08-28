@@ -19,6 +19,7 @@ Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'mindriot101/vim-yapf'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -169,3 +170,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
      \ expandtab
      \ autoindent
      \ fileformat=unix
+
+"================
+" mindriot101/vim-yapf
+nnoremap <leader>y :call Yapf()<cr> 
