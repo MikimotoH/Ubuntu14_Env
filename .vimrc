@@ -20,6 +20,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'mindriot101/vim-yapf'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
