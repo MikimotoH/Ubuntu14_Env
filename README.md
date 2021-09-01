@@ -35,6 +35,8 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
 vim ~/.vimrc
 vim ~/.config/nvim/init.vim
+# black: python code formatter
+sudo python3 -m pip install black
 ```
 
 ### build vim-8.1 for YouCompleteMe

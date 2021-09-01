@@ -176,3 +176,13 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
 "================
 " mindriot101/vim-yapf
 nnoremap <leader>y :call Yapf()<cr> 
+
+
+"==================
+" /vim-autoformat/vim-autoformat
+let g:python3_host_prog="/usr/bin/python3"
+let g:formatterpath = ['/home/ubuntu/anaconda3/bin/black']
+noremap <F3> :Autoformat<CR>
+au BufWrite * :Autoformat
+
+
