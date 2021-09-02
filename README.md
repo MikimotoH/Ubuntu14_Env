@@ -13,6 +13,7 @@ git clone https://github.com/MikimotoH/Ubuntu14_Env/
 cd Ubuntu14_Env
 cp ./.{zshrc,gitconfig,antigenrc} ~/
 source ~/.zshrc
+# fzf installataion depends on vimrc fzf  
 vi ~/.oh-my-zsh/themes/rkj.zsh-theme # change %I to %H
 ```
 
