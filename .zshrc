@@ -111,5 +111,3 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/anaconda3/bin:/home/ubuntu/.local/bin
 [ $(alias | grep -sq '^ag=') ] && unalias ag
 
-
-unalias pip
