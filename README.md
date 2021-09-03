@@ -55,6 +55,21 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ```
 
+### Change Ugly Putty Color Scheme
+
+- The default ** in Putty Color Scheme shows #0000BB which is very similar to bkg color
+- at Windows
+```
+git clone https://github.com/AlexAkulov/putty-color-themes
+```
+
+- edit 'putty-color-themes/putty-color-themes'
+- modify session-name of `[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\{session-name}]`session-name
+- change `"Colour7"="78,81,47"`
+- install '46. Tomorrow Night.reg'
+
+
+
 ### install Xrdp xfce4
 ```
 sudo apt-get install xfce4 xfce4-goodies xrdp vnc4server -y
