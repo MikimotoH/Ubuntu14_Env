@@ -14,7 +14,7 @@ cd Ubuntu14_Env
 cp ./.{zshrc,gitconfig,antigenrc} ~/
 # fix antigen error to install fzf-zsh-plugin
 mkdir -p ~/.antigen/bundles/unixorn
-git clone https://github.com/unixorn/fzf-zsh-plugin ~/.antigen/bundles/unixorn
+git clone https://github.com/unixorn/fzf-zsh-plugin ~/.antigen/bundles/unixorn/fzf-zsh-plugin
 source ~/.zshrc
 # fzf installataion depends on vimrc fzf  
 vi ~/.oh-my-zsh/themes/rkj.zsh-theme # change %I to %H
