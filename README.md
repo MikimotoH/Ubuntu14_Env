@@ -63,8 +63,8 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 git clone https://github.com/MikimotoH/putty-color-themes
 ```
 
-- edit 'putty-color-themes/putty-color-themes'
-- modify session-name of `[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\{session-name}]`session-name
+- edit 'putty-color-themes/46. Tomorrow Night.reg'
+- modify session-name of `[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\{session-name}]` 
 - change `"Colour7"="78,81,47"`
 - install '46. Tomorrow Night.reg'
 
