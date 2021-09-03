@@ -23,6 +23,8 @@ Plugin 'mindriot101/vim-yapf'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'psf/black'
+Plugin 'dense-analysis/ale'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -184,5 +186,10 @@ let g:python3_host_prog="/usr/bin/python3"
 let g:formatterpath = ['/home/ubuntu/anaconda3/bin/black']
 noremap <F3> :Autoformat<CR>
 au BufWrite * :Autoformat
+
+"=============
+" Black python reformat
+autocmd BufWritePre *.py execute ':Black'
+nnoremap <F7> :Black<CR>
 
 
