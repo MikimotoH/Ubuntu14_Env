@@ -60,7 +60,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - The default ** in Putty Color Scheme shows #0000BB which is very similar to bkg color
 - at Windows
 ```
-git clone https://github.com/AlexAkulov/putty-color-themes
+git clone https://github.com/MikimotoH/putty-color-themes
 ```
 
 - edit 'putty-color-themes/putty-color-themes'
