@@ -64,6 +64,7 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - change `"Colour7"="78,81,47"`
 - install '46. Tomorrow Night.reg'
 - use convert_reg_to_WindowsTerminalSettingsJson.py to convert reg to Windows Terminal settings.json
+- Insert json to "%LocalAppData%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
 
 
 
