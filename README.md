@@ -44,7 +44,7 @@ sudo python3 -m pip install black
 ### install YouCompleteMe
 ```
 sudo apt-get install cmake -y
-cd ~/.vim/bundles/YouCompleteMe/
+cd ~/.vim/bundle/YouCompleteMe/
 /usr/bin/python3 ./install.py
 ```
 
