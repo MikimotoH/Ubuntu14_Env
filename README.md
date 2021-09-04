@@ -55,18 +55,15 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 ```
 
-### Change Ugly Putty Color Scheme
+### Change Kitty(Putty) Color Scheme
 
-- The default ** in Putty Color Scheme shows #0000BB which is very similar to bkg color
-- at Windows
-```
-git clone https://github.com/MikimotoH/putty-color-themes
-```
-
-- edit 'putty-color-themes/46. Tomorrow Night.reg'
+- The default `**` in Putty Color Scheme shows #0000BB which is very similar to bkg color
+- at Windows download https://github.com/MikimotoH/putty-color-themes ZIP file
+- edit '46. Tomorrow Night.reg'
 - modify session-name of `[HKEY_CURRENT_USER\Software\SimonTatham\PuTTY\Sessions\{session-name}]` 
 - change `"Colour7"="78,81,47"`
 - install '46. Tomorrow Night.reg'
+- use convert_reg_to_WindowsTerminalSettingsJson.py to convert reg to Windows Terminal settings.json
 
 
 
