@@ -10,21 +10,12 @@ Plugin 'morhetz/gruvbox'
 Plugin 'powerman/vim-plugin-AnsiEsc'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'scrooloose/syntastic'
-Plugin 'nvie/vim-flake8'
-Plugin 'Chiel92/vim-autoformat'
 Plugin 'preservim/tagbar'
 Plugin 'preservim/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'godlygeek/tabular'
-Plugin 'vim-scripts/indentpython.vim'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'mindriot101/vim-yapf'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'psf/black'
-Plugin 'dense-analysis/ale'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -85,6 +76,9 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_python_checker_args='--ignore=E501'
+let g:syntastic_python_flake8_args='--ignore=E501'
+let g:syntastic_python_flake8_post_args='--ignore=E501,E128,E225'
 
 
 "================
@@ -170,7 +164,7 @@ au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match ExtraWhitespace /\s\+$/
      \ tabstop=4
      \ softtabstop=4
      \ shiftwidth=4
-     \ textwidth=80
+     \ textwidth=120
      \ expandtab
      \ autoindent
      \ fileformat=unix
