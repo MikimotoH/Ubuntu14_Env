@@ -11,18 +11,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 curl -L git.io/antigen > ~/antigen.zsh
 git clone https://github.com/MikimotoH/Ubuntu14_Env/
 cd Ubuntu14_Env
-cp ./.{zshrc,gitconfig,antigenrc} ~/
+cp ~/Ubuntu14_Env/.{zshrc,gitconfig,antigenrc} ~/
 # fix antigen error to install fzf-zsh-plugin
 mkdir -p ~/.antigen/bundles/unixorn
 git clone https://github.com/unixorn/fzf-zsh-plugin ~/.antigen/bundles/unixorn/fzf-zsh-plugin
 source ~/.zshrc
 # fzf installataion depends on vimrc fzf  
-vi ~/.oh-my-zsh/themes/rkj.zsh-theme # change %I to %H
+cp ~/Ubuntu14_Env/rkj.zsh-theme  ~/.oh-my-zsh/themes/rkj.zsh-theme
+cd ~/.oh-my-zsh
+git commit -a -m 'change %I to %H'
 ```
 
 ### install tmux 2.0 and tpm
 ```
-cp ./.tmux.conf ~/
+cp ~/Ubuntu14_Env/.tmux.conf ~/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux
 # press "Ctrl-B Shift+I" to install Plugins
