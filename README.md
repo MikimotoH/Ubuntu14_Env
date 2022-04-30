@@ -1,7 +1,7 @@
 # Ubuntu14_Env
 Ubuntu 14.04 LTS env
 
-### run install.sh as regular user which is a sudo member
+### run [install.sh](install.sh) as regular user which is a sudo member
 After oh-my-zsh asked you to set zsh to default, the script comes to stop, you need to Ctrl-D to continue the script
 
 ### install oh-my-zsh antigen
