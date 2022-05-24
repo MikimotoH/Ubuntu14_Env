@@ -34,8 +34,9 @@ tmux
 # press "Ctrl-B ESC Shitf-/" to test search in tmux buffer
 ```
 
-### install vim vundle
+### install vim vundle for python IDE 
 ```
+sudo apt install python3-pip exuberant-ctags -y
 cp ./.vimrc ~/
 mkdir -p ~/.config/nvim/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
