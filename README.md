@@ -6,7 +6,7 @@ After oh-my-zsh asked you to set zsh to default, the script comes to stop, you n
 
 ### install oh-my-zsh antigen
 ```
-sudo apt update && sudo apt install python3-pip zsh git vim neovim tmux exuberant-ctags silversearcher-ag curl wget -y
+sudo apt update && sudo apt install zsh git vim neovim tmux silversearcher-ag curl wget -y
 zsh  # select 0
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
