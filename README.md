@@ -1,40 +1,90 @@
 # Ubuntu14_Env
-Ubuntu 14.04 LTS env
+compatible to Ubuntu  18.04, 20.04, and 22.04
 
 ### run [install.sh](install.sh) as regular user which is a sudo member
 After oh-my-zsh asked you to set zsh to default, the script comes to stop, you need to Ctrl-D to continue the script
 
-### install oh-my-zsh antigen
+### Install oh-my-zsh antigen
 ```
-sudo apt update && sudo apt install zsh git vim neovim tmux silversearcher-ag curl wget -y
+sudo apt update && sudo apt install -y zsh git vim tmux curl
 zsh  # select 0
 sudo chsh -s `which zsh` $USER
 cat /etc/passwd | grep $USER
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl -L git.io/antigen > ~/antigen.zsh
+cd ~
 git clone https://github.com/MikimotoH/Ubuntu14_Env/
-cd Ubuntu14_Env
 cp ~/Ubuntu14_Env/.{zshrc,gitconfig,antigenrc} ~/
+cp ~/Ubuntu14_Env/rkj.zsh-theme  ~/.oh-my-zsh/themes/rkj.zsh-theme
 # fix antigen error to install fzf-zsh-plugin
 mkdir -p ~/.antigen/bundles/unixorn
 git clone https://github.com/unixorn/fzf-zsh-plugin ~/.antigen/bundles/unixorn/fzf-zsh-plugin
+# fzf install
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 source ~/.zshrc
-# fzf installataion depends on vimrc fzf  
-cp ~/Ubuntu14_Env/rkj.zsh-theme  ~/.oh-my-zsh/themes/rkj.zsh-theme
+
 cd ~/.oh-my-zsh
 git commit -a -m 'change %I to %H'
 ```
 
-### install tmux 2.0 and tpm
+### Install tmux 2.0 and tpm
 ```
 cp ~/Ubuntu14_Env/.tmux.conf ~/
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 tmux
 # press "Ctrl-B Shift+I" to install Plugins
-# press "Ctrl-B ESC Shitf-/" to test search in tmux buffer
+# press "Ctrl-B ESC ?" to test search in tmux buffer
 ```
 
-### install vim vundle for python IDE 
+### Install VNC Server
+
+Refer [How to Install and Configure VNC on Ubuntu 20.04](https://linuxize.com/post/how-to-install-and-configure-vnc-on-ubuntu-20-04/ )
+
+```
+sudo apt-get install -y xfce4 xfce4-goodies tigervnc-standalone-server
+vncpasswd
+# don't set view-only password 
+mkdir ~/.vnc
+cp ~/Ubuntu14_Env/{xstartup,config} ~/.vnc
+# launch vncserver
+vncserver
+vncserver -list
+vncserver -kill :1
+# enable vnc service after startup 
+sudo cp ~/Ubuntu14_Env/vncserver@.service /etc/systemd/system/
+sudo vim /etc/systemd/system/vncserver@.service
+# change User as `whoami` at line 7
+sudo systemctl daemon-reload
+sudo systemctl enable vncserver@1.service
+sudo systemctl start vncserver@1.service
+sudo systemctl status vncserver@1.service
+```
+
+
+#### Create SSH Tunneling
+ * -L {local_port}:{remote_host}:{remote_port}
+ * -N Do not execute a remote command. This is useful for just forwarding ports. 
+ * -f  Requests ssh to go to background just before command execution. 
+```
+ssh -L 5901:127.0.0.1:5901 -N -f ubuntu@192.168.33.10
+```
+
+#### Old VNC setting
+```
+vnc4server -geometry 1366x768 -depth 16 :1
+# setup password
+xfce4-session --display=:1 &
+
+# xfonts
+sudo apt-get install xfonts-base xfonts-100dpi  xfonts-75dpi xfonts-cyrillic xfonts-scalable 
+# chinese fonts
+sudo apt-get install xfonts-wqy fonts-wqy-zenhei
+# japanese fonts
+sudo apt-get install fonts-takao-mincho
+```
+
+### Install vim vundle for python IDE 
 ```
 sudo apt install python3-pip exuberant-ctags -y
 cp ./.vimrc ~/
@@ -47,18 +97,11 @@ vim ~/.config/nvim/init.vim
 sudo python3 -m pip install black
 ```
 
-### install YouCompleteMe
+### Install YouCompleteMe
 ```
 sudo apt-get install cmake -y
 cd ~/.vim/bundle/YouCompleteMe/
 /usr/bin/python3 ./install.py
-```
-
-### fzf
-```
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
-
 ```
 
 ### Change Kitty(Putty) Color Scheme
@@ -71,28 +114,4 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 - install '46. Tomorrow Night.reg'
 - use convert_reg_to_WindowsTerminalSettingsJson.py to convert reg to Windows Terminal settings.json
 - Insert json to "%LocalAppData%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
-
-
-
-### install Xrdp xfce4
-```
-sudo apt-get install xfce4 xfce4-goodies xrdp vnc4server -y
-# sudo apt-get install xubuntu-desktop
-sudo cp ~/.xsession /etc/skel
-sudo vim /etc/xrdp/xrdp.ini
-# modify port=-1 to port=ask-1
-sudo service xrdp restart
-export DISPLAY=:1
-vnc4server -geometry 1366x768 -depth 16 :1
-# setup password
-xfce4-session --display=:1 &
-# startxfce4 &
-
-# xfonts
-sudo apt-get install xfonts-base xfonts-100dpi  xfonts-75dpi xfonts-cyrillic xfonts-scalable 
-# chinese fonts
-sudo apt-get install xfonts-wqy fonts-wqy-zenhei
-# japanese fonts
-sudo apt-get install fonts-takao-mincho
-```
 
