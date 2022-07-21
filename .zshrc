@@ -101,7 +101,7 @@ export C_INCLUDE_PATH=/usr/local/cuda-7.5/targets/x86_64-linux/include
 export LD_LIBRARY_PATH=/usr/local/lib:/usr/local/cuda-7.5/lib64:/usr/local/cuda-7.5/targets/x86_64-linux/lib
 export CUDA_ROOT=/usr/local/cuda-7.5
 
-export DISPLAY=':0'
+export DISPLAY=':1'
 export VISUAL=vim
 export EDITOR="$VISUAL"
 export GOPATH=$HOME/go
