@@ -13,7 +13,7 @@ cat /etc/passwd | grep $USER
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 curl -L git.io/antigen > ~/antigen.zsh
 cd ~
-git clone https://github.com/MikimotoH/Ubuntu14_Env/
+git clone https://github.com/MikimotoH/Ubuntu14_Env/ ~/Ubuntu14_Env
 cp ~/Ubuntu14_Env/.{zshrc,gitconfig,antigenrc} ~/
 cp ~/Ubuntu14_Env/rkj.zsh-theme  ~/.oh-my-zsh/themes/rkj.zsh-theme
 # fix antigen error to install fzf-zsh-plugin
