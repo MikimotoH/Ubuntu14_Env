@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # source /etc/zsh_command_not_found
 export TERM=xterm-256color
-export JAVA_HOME=/opt/jdk1.8.0_73
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
 export PATH=$PATH:$JAVA_HOME/bin
 export PATH=$PATH:/usr/local/cuda-7.5/bin
 
