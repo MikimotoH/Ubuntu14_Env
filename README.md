@@ -87,7 +87,7 @@ sudo apt-get install fonts-takao-mincho
 ### Install vim vundle for python IDE 
 ```
 sudo apt install python3-pip exuberant-ctags -y
-cp ./.vimrc ~/
+cp ~/Ubuntu14_Env/.vimrc ~/
 mkdir -p ~/.config/nvim/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
