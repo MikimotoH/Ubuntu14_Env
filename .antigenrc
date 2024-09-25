@@ -16,7 +16,7 @@ antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle esc/conda-zsh-completion
+antigen bundle conda-incubator/conda-zsh-completion
 antigen bundle unixorn/fzf-zsh-plugin
 
 # Select theme
