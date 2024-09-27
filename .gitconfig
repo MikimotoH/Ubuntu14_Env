@@ -9,6 +9,8 @@
 	default = matching
 [core]
 	editor = nvim
+	autocrlf = input
+	eol = lf	
 [diff]
 	tool = vimdiff
 [merge]
